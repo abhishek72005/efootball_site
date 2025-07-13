@@ -1,0 +1,176 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --primary: #1d4ed8; /* blue */
+  --accent: #22c55e;  /* green */
+  --bg: #0f172a;      /* dark navy */
+  --surface: #1e293b; /* slate */
+  --text: #f8fafc;    /* near white */
+  --danger: #dc2626;  /* red */
+  --success: #16a34a; /* green */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ---- NAVBAR ---- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+}
+
+nav a {
+  color: var(--text);
+  margin-left: 1.5rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--accent);
+}
+nav .btn {
+  margin-left: 1.5rem;
+}
+
+/* ---- HERO ---- */
+.hero {
+  height: 90vh;
+  background: url('https://cdn.cloudflare.steamstatic.com/steam/apps/1665460/ss_1.jpg')
+    no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 3rem;
+  border-radius: 12px;
+}
+
+/* ---- BUTTONS ---- */
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.btn.big {
+  font-size: 1.25rem;
+}
+
+.btn.small {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+/* ---- FEATURES ---- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background: var(--surface);
+}
+.card {
+  background: var(--bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* ---- CONTAINER ---- */
+.container {
+  padding: 3rem 2rem;
+  max-width: 960px;
+  margin: auto;
+}
+
+/* ---- BLOG ---- */
+.blog article {
+  margin-bottom: 2.5rem;
+}
+.blog .meta {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* ---- FORMS ---- */
+form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(100, 116, 139, 0.4);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-family: inherit;
+}
+textarea { resize: vertical; min-height: 120px; }
+
+/* messages */
+.success { color: var(--success); }
+.error { color: var(--danger); }
+.hidden { display: none; }
+
+/* password strength bar */
+#strengthBar {
+  height: 8px;
+  width: 0%;
+  border-radius: 4px;
+  background: var(--danger);
+  transition: width 0.3s, background 0.3s;
+}
+
+/* ---- FOOTER ---- */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--primary);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 640px) {
+  nav a { display: none; } /* hide links, mobile nav could be added */
+}
